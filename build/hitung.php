@@ -3,7 +3,6 @@ session_start();
 include 'functions.php';
 
 $isLogin = (isset($_SESSION['login']) && $_SESSION['login'] === true);
-
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +18,7 @@ $isLogin = (isset($_SESSION['login']) && $_SESSION['login'] === true);
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
-<body class="min-h-screen bg-amber-100 font-sans flex flex-col">
+<body class="min-h-full bg-amber-100 font-sans flex flex-col">
     <header class="bg-amber-950 text-amber-200">
         <nav class="p-5 text-xl shadow md:flex md:item-centers md:justify-between font-medium">
             <div class="flex justify-between items-center">
@@ -71,72 +70,135 @@ $isLogin = (isset($_SESSION['login']) && $_SESSION['login'] === true);
         </nav>
     </header>
 
-    <main class="px-8 py-14">
-        <form action="hasil.php" method="post" class="max-w-md mx-auto bg-amber-200 border-4 border-amber-950 p-6 rounded-lg shadow-md">
-            <h2 class="text-3xl mb-6 text-center font-bold text-amber-950">
-                Masukan Bobot
-            </h2>
-            <ul>
-                <li class="mb-4 columns-2">
-                    <label for="harga" class="block text-xl text-amber-950 font-bold mb-2">Harga</label>
-                    <p class="text-amber-950 text-xs">(1 untuk sangat murah, <br> 5 untuk sangat mahal)</p>
-                    <div id="harga" class="bg-amber-100 accent-amber-950 shadow cursor-pointer border border-amber-950 rounded w-full py-2 px-3 text-lg text-amber-950 leading-tight focus:outline-none focus:shadow-outline flex justify-between">
-                        <label class="ml-2"><input type="radio" name="harga" value="1" required> 1</label>
-                        <label class="ml-2"><input type="radio" name="harga" value="2" required> 2</label>
-                        <label class="ml-2"><input type="radio" name="harga" value="3" required> 3</label>
-                        <label class="ml-2"><input type="radio" name="harga" value="4" required> 4</label>
-                        <label class="ml-2"><input type="radio" name="harga" value="5" required> 5</label>
-                    </div>
+    <main class="p-8">
+        <div class="grid grid-cols-1 md:grid-cols-3">
+            <ol class="list-decimal md:block text-amber-950 md:order-1">
+                <h4 class="text-3xl font-bold pb-3">
+                    Langkah-langkah Metode TOPSIS
+                </h4>
+                <p>Sebelum menghitung, tentukan dulu bobot preferensinya, lalu:</p>
+                <li class="">
+                    Matriks keputusan <br>
+                    <img src="img/rumus/mkeputusan.png" class="w-28" alt="">
+                    Dengan m = alternatif dan n = kriteria.
                 </li>
+                <li>
+                    Matriks keputusan ternormalisasi (r) <br>
+                    <img src="img/rumus/normalisasi.png" class="w-32" alt="">
+                </li>
+                <li>
+                    Matriks keputusan ternomalisasi terbobot (y) <br>
+                    <img src="img/rumus/mnterbobot.png" class="w-32" alt="">
+                    Dengan i = 1, 2, …m dan j = 1, 2, …n;
+                </li>
+                <li>
+                    Solusi ideal positif (A+) dan solusi ideal negatif (A-) <br>
+                    <ul>
+                        <li>
+                            Solusi ideal positif (A+)
+                            <img src="img/rumus/idealpos.png" class="w-48" alt="">
+                            <img src="img/rumus/jikaidealpos.png" class="w-80" alt="">
+                        </li>
+                        <li>
+                            Solusi ideal negatif (A-) 
+                            <img src="img/rumus/idealneg.png" class="w-48" alt="">
+                            <img src="img/rumus/jikaidealneg.png" class="w-80" alt="">
+                        </li>
+                    </ul>
 
-                <li class="mb-4 columns-2">
-                    <label for="warna" class="block text-xl text-amber-950 font-bold mb-2">Warna</label>
-                    <p class="text-amber-950 text-xs">(1 untuk sangat gelap, <br> 5 untuk sangat terang)</p>
-                    <div id="warna" class="bg-amber-100 accent-amber-950 shadow cursor-pointer border border-amber-950 rounded w-full py-2 px-3 text-lg text-amber-950 leading-tight focus:outline-none focus:shadow-outline flex justify-between">
-                        <label class="ml-2"><input type="radio" name="warna" value="1" required> 1</label>
-                        <label class="ml-2"><input type="radio" name="warna" value="2" required> 2</label>
-                        <label class="ml-2"><input type="radio" name="warna" value="3" required> 3</label>
-                        <label class="ml-2"><input type="radio" name="warna" value="4" required> 4</label>
-                        <label class="ml-2"><input type="radio" name="warna" value="5" required> 5</label>
-                    </div>
                 </li>
+            </ol>
 
-                <li class="mb-4 columns-2">
-                    <label for="pola" class="block text-xl text-amber-950 font-bold mb-2">Pola</label>
-                    <p class="text-amber-950 text-xs">(1 untuk sangat lurus, <br> 5 untuk sangat bergelombang)</p>
-                    <div id="pola" class="bg-amber-100 accent-amber-950 shadow cursor-pointer border border-amber-950 rounded w-full py-2 px-3 text-lg text-amber-950 leading-tight focus:outline-none focus:shadow-outline flex justify-between">
-                        <label class="ml-2"><input type="radio" name="pola" value="1" required> 1</label>
-                        <label class="ml-2"><input type="radio" name="pola" value="2" required> 2</label>
-                        <label class="ml-2"><input type="radio" name="pola" value="3" required> 3</label>
-                        <label class="ml-2"><input type="radio" name="pola" value="4" required> 4</label>
-                        <label class="ml-2"><input type="radio" name="pola" value="5" required> 5</label>
-                    </div>
-                </li>
+            <div class="order-2 py-6">
+                <form action="hasil.php" method="post" class="max-w-md mx-auto bg-amber-200 border-4 border-amber-950 p-6 rounded-lg shadow-md col-span-1 md:col-span-1">
+                    <h2 class="text-3xl mb-6 text-center font-bold text-amber-950">
+                        Masukan Bobot Preferensi
+                    </h2>
+                    <ul>
+                        <li class="mb-4 columns-2">
+                            <label for="harga" class="block text-xl text-amber-950 font-bold mb-2">Harga</label>
+                            <p class="text-amber-950 text-xs inline-block">(1 untuk sangat murah, <br> 5 untuk sangat mahal)</p>
+                            <div id="harga" class="bg-amber-100 accent-amber-950 shadow cursor-pointer border border-amber-950 rounded w-full py-2 px-3 text-lg text-amber-950 leading-tight focus:outline-none focus:shadow-outline flex justify-between">
+                                <label class="ml-2"><input type="radio" name="harga" value="1" required> 1</label>
+                                <label class="ml-2"><input type="radio" name="harga" value="2" required> 2</label>
+                                <label class="ml-2"><input type="radio" name="harga" value="3" required> 3</label>
+                                <label class="ml-2"><input type="radio" name="harga" value="4" required> 4</label>
+                                <label class="ml-2"><input type="radio" name="harga" value="5" required> 5</label>
+                            </div>
+                        </li>
 
-                <li class="mb-4 columns-2">
-                    <label for="dayaTahan" class="block text-xl text-amber-950 font-bold mb-2">Daya Tahan</label>
-                    <p class="text-amber-950 text-xs">(1 untuk sangat rendah, <br> 5 untuk sangat tinggi)</p>
-                    <div id="dayaTahan" class="bg-amber-100 accent-amber-950 shadow cursor-pointer border border-amber-950 rounded w-full py-2 px-3 text-lg text-amber-950 leading-tight focus:outline-none focus:shadow-outline flex justify-between">
-                        <label class="ml-2"><input type="radio" name="dayaTahan" value="1" required> 1</label>
-                        <label class="ml-2"><input type="radio" name="dayaTahan" value="2" required> 2</label>
-                        <label class="ml-2"><input type="radio" name="dayaTahan" value="3" required> 3</label>
-                        <label class="ml-2"><input type="radio" name="dayaTahan" value="4" required> 4</label>
-                        <label class="ml-2"><input type="radio" name="dayaTahan" value="5" required> 5</label>
-                    </div>
-                </li>
+                        <li class="mb-4 columns-2">
+                            <label for="warna" class="block text-xl text-amber-950 font-bold mb-2">Warna</label>
+                            <p class="text-amber-950 text-xs inline-block">(1 untuk sangat gelap, <br> 5 untuk sangat terang)</p>
+                            <div id="warna" class="bg-amber-100 accent-amber-950 shadow cursor-pointer border border-amber-950 rounded w-full py-2 px-3 text-lg text-amber-950 leading-tight focus:outline-none focus:shadow-outline flex justify-between">
+                                <label class="ml-2"><input type="radio" name="warna" value="1" required> 1</label>
+                                <label class="ml-2"><input type="radio" name="warna" value="2" required> 2</label>
+                                <label class="ml-2"><input type="radio" name="warna" value="3" required> 3</label>
+                                <label class="ml-2"><input type="radio" name="warna" value="4" required> 4</label>
+                                <label class="ml-2"><input type="radio" name="warna" value="5" required> 5</label>
+                            </div>
+                        </li>
 
-                <li class="flex items-center justify-center w-full">
-                    <a href="index.php" class="transition inline-flex items-center m-3 bg-amber-100 hover:bg-amber-950 hover:text-amber-100 border-2 border-amber-950 text-amber-950 text-xl font-bold py-2 px-4 mt-3 rounded-full shadow-md">
-                        <ion-icon name="chevron-back-outline" class="text-xl mr-1"></ion-icon>
-                        Kembali
-                    </a>
-                    <button type="submit" name="hitung" class="transition inline-flex items-center m-3 bg-amber-100 hover:bg-amber-950 hover:text-amber-100 border-2 border-amber-950 text-amber-950 text-xl font-bold py-2 px-4 mt-3 rounded-full shadow-md">
-                        <ion-icon name="chevron-forward-outline" class="text-xl mr-1"></ion-icon>
-                        Hitung
-                    </button>
+                        <li class="mb-4 columns-2">
+                            <label for="pola" class="block text-xl text-amber-950 font-bold mb-2">Pola</label>
+                            <p class="text-amber-950 text-xs inline-block">(1 untuk sangat lurus, <br> 5 untuk sangat bergelombang)</p>
+                            <div id="pola" class="bg-amber-100 accent-amber-950 shadow cursor-pointer border border-amber-950 rounded w-full py-2 px-3 text-lg text-amber-950 leading-tight focus:outline-none focus:shadow-outline flex justify-between">
+                                <label class="ml-2"><input type="radio" name="pola" value="1" required> 1</label>
+                                <label class="ml-2"><input type="radio" name="pola" value="2" required> 2</label>
+                                <label class="ml-2"><input type="radio" name="pola" value="3" required> 3</label>
+                                <label class="ml-2"><input type="radio" name="pola" value="4" required> 4</label>
+                                <label class="ml-2"><input type="radio" name="pola" value="5" required> 5</label>
+                            </div>
+                        </li>
+
+                        <li class="mb-4 columns-2">
+                            <label for="dayaTahan" class="block text-xl text-amber-950 font-bold mb-2">Daya Tahan</label>
+                            <p class="text-amber-950 text-xs inline-block">(1 untuk sangat rendah, <br> 5 untuk sangat tinggi)</p>
+                            <div id="dayaTahan" class="bg-amber-100 accent-amber-950 shadow cursor-pointer border border-amber-950 rounded w-full py-2 px-3 text-lg text-amber-950 leading-tight focus:outline-none focus:shadow-outline flex justify-between">
+                                <label class="ml-2"><input type="radio" name="dayaTahan" value="1" required> 1</label>
+                                <label class="ml-2"><input type="radio" name="dayaTahan" value="2" required> 2</label>
+                                <label class="ml-2"><input type="radio" name="dayaTahan" value="3" required> 3</label>
+                                <label class="ml-2"><input type="radio" name="dayaTahan" value="4" required> 4</label>
+                                <label class="ml-2"><input type="radio" name="dayaTahan" value="5" required> 5</label>
+                            </div>
+                        </li>
+
+                        <li class="flex items-center justify-center w-full">
+                            <a href="index.php" class="transition inline-flex items-center m-3 bg-amber-100 hover:bg-amber-950 hover:text-amber-100 border-2 border-amber-950 text-amber-950 text-xl font-bold py-2 px-4 mt-3 rounded-full shadow-md">
+                                <ion-icon name="chevron-back-outline" class="text-xl mr-1"></ion-icon>
+                                Kembali
+                            </a>
+                            <button type="submit" name="hitung" class="transition inline-flex items-center m-3 bg-amber-100 hover:bg-amber-950 hover:text-amber-100 border-2 border-amber-950 text-amber-950 text-xl font-bold py-2 px-4 mt-3 rounded-full shadow-md">
+                                <ion-icon name="chevron-forward-outline" class="text-xl mr-1"></ion-icon>
+                                Hitung
+                            </button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+
+            <ol start="5" class="list-decimal md:block text-amber-950 md:order-3 md:pt-16 md:px-5">
+                <li>
+                    Menentukan jarak solusi ideal positif (D+) dan negatif (D-) <br>
+                    Jarak solusi ideal positif (D+) <br>
+                    <img src="img/rumus/jidealpos.png" class="w-48" alt="">
+                    Dengan i = 1, 2, …m
                 </li>
-            </ul>
-        </form>
+                <li>
+                    Jarak solusi ideal negatif (D-) <br>
+                    <img src="img/rumus/jidealneg.png" class="w-48" alt="">
+                    Dengan i = 1, 2, …m
+                </li>
+                <li> Menentukan nilai preferensi (V) <br>
+                    <img src="img/rumus/npreferensi.png" class="w-24" alt="">
+                    Dengan i = 1, 2, …m
+                </li>
+                <li>
+                    Nilai preferensi (V) yang paling besar menunjukan bahwa itulah alternatif dengan ranking tertinggi.
+                </li>
+            </ol>
+
+        </div>
     </main>
 
     <div class="bottom-0">
@@ -158,8 +220,6 @@ $isLogin = (isset($_SESSION['login']) && $_SESSION['login'] === true);
                 list.classList.add('opacity-100')) : (
                 e.name = "menu", list.classList.remove('top-[80px]'),
                 list.classList.remove('opacity-100'));
-
-
         }
     </script>
 </body>

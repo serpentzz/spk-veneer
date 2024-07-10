@@ -70,7 +70,7 @@ $isLogin = (isset($_SESSION['login']) && $_SESSION['login'] === true);
         </nav>
     </header>
 
-    <main class="flex-grow py-14 px-8 ">
+    <main class="flex-grow p-8 ">
         <h1 class="text-3xl font-bold pb-4 text-left text-amber-950">
             Tentang website
         </h1>
@@ -101,16 +101,17 @@ $isLogin = (isset($_SESSION['login']) && $_SESSION['login'] === true);
         </p>
         <br>
         <ol class="list-decimal list-inside text-amber-950">
-            <li>Normalisasi Matriks Keputusan: Mengubah data kriteria ke dalam bentuk yang dapat dibandingkan.</li>
-            <li>Pembobotan Kriteria: Mengalikan data normalisasi dengan bobot yang telah ditentukan untuk setiap kriteria.</li>
-            <li>Penentuan Solusi Ideal Positif dan Negatif: Menentukan solusi terbaik dan terburuk untuk setiap kriteria.</li>
-            <li>Menghitung Jarak dari Solusi Ideal: Menghitung seberapa jauh setiap alternatif dari solusi ideal positif dan negatif.</li>
-            <li>Menghitung Nilai Preferensi: Memberikan nilai preferensi untuk setiap alternatif berdasarkan jarak dari solusi ideal.</li>
-            <li>Ranking Alternatif: Menyusun alternatif berdasarkan nilai preferensi yang diperoleh.</li>
+            <li>Menentukan Matriks Keputusan:</li>
+            <li>Mengnormalisasi matriks keputusan untuk membandingkan data kriteria.</li>
+            <li>Membobotan matriks ternormalisasi dengan bobot yang ditentukan untuk setiap kriteria.</li>
+            <li>Menentukan solusi ideal positif dan negatif untuk setiap kriteria.</li>
+            <li>Menghitung jarak dari solusi ideal untuk setiap alternatif.</li>
+            <li>Menghitung nilai preferensi berdasarkan jarak dari solusi ideal.</li>
+            <li>Menyusun ranking alternatif berdasarkan nilai preferensi yang diperoleh.</li>
         </ol>
         <br>
         <p class="text-amber-950 text-justify">
-            Dengan metode ini, pengguna dapat dengan mudah melihat veneer kayu mana yang paling memenuhi kriteria yang mereka anggap penting dan membuat keputusan yang lebih baik dan lebih cepat.
+            Dengan metode ini, pengguna dapat dengan mudah melihat veneer kayu mana yang sesuai dengan preferensi mereka dalam membantu membuat keputusan yang lebih baik.
         </p>
 
     </main>

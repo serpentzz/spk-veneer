@@ -67,13 +67,10 @@
 
         return mysqli_affected_rows($conn);
     }
-
-
     ?>
 
     <!DOCTYPE html>
     <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -139,7 +136,7 @@
         <main class="max-w-6xl mx-auto p-5 min-h-screen">
             <div class="container mx-auto pt-8">
                 <h1 class="text-4xl font-bold mb-8 text-center text-amber-950">
-                    Bobot Skala Kriteria
+                     Skala Bobot Kriteria
                 </h1>
 
                 <!-- Table Skala -->
@@ -158,44 +155,44 @@
                             <tr>
                                 <td class="px-3 py-2 text-lg text-center border-r border-b font-bold border-amber-950 text-amber-950 row-span-5" rowspan="5">Skala</td>
                                 <td class="px-3 py-2 text-lg text-center border-r border-b font-bold border-amber-950 text-amber-950">5</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 font-normal text-amber-950">Sangat mahal</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 font-normal text-amber-950">Sangat terang</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 font-normal text-amber-950">Sangat bergelombang</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 font-normal text-amber-950">Sangat tinggi</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 font-normal text-amber-950">Sangat mahal</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 font-normal text-amber-950">Sangat terang</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 font-normal text-amber-950">Sangat bergelombang</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 font-normal text-amber-950">Sangat tinggi</td>
                             </tr>
                             <tr>
                                 <td class="px-3 py-2 text-lg text-center border-r border-b font-bold border-amber-950 text-amber-950">4</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 font-normal text-amber-950">Mahal</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 font-normal text-amber-950">Terang</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 font-normal text-amber-950">Bergelombang</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 font-normal text-amber-950">Tinggi</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 font-normal text-amber-950">Mahal</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 font-normal text-amber-950">Terang</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 font-normal text-amber-950">Bergelombang</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 font-normal text-amber-950">Tinggi</td>
                             </tr>
                             <tr>
                                 <td class="px-3 py-2 text-lg text-center border-r border-b font-bold border-amber-950 text-amber-950">3</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 text-amber-950">Cukup</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 text-amber-950">Cukup</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 text-amber-950">Cukup</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 text-amber-950">Cukup</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 text-amber-950">Cukup</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 text-amber-950">Cukup</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 text-amber-950">Cukup</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 text-amber-950">Cukup</td>
                             </tr>
                             <tr>
                                 <td class="px-3 py-2 text-lg text-center border-r border-b font-bold border-amber-950 text-amber-950">2</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 text-amber-950">Murah</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 text-amber-950">Gelap</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 text-amber-950">Lurus</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 text-amber-950">Rendah</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 text-amber-950">Murah</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 text-amber-950">Gelap</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 text-amber-950">Lurus</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 text-amber-950">Rendah</td>
                             </tr>
                             <tr>
                                 <td class="px-3 py-2 text-lg text-center border-r border-b font-bold border-amber-950 text-amber-950">1</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 text-amber-950">Sangat murah</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 text-amber-950">Sangat gelap</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 text-amber-950">Sangat lurus</td>
-                                <td class="px-3 py-2 text-lg text-center border-b border-amber-950 text-amber-950">Sangat rendah</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 text-amber-950">Sangat murah</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 text-amber-950">Sangat gelap</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 text-amber-950">Sangat lurus</td>
+                                <td class="px-3 py-2 text-md text-center border-b border-amber-950 text-amber-950">Sangat rendah</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <h1 class="text-4xl font-bold mb-8 text-center text-amber-950">
+                <h1 id="daftar" class="text-4xl font-bold mb-8 text-center text-amber-950">
                     Daftar Nilai Matriks Veneer
                 </h1>
 
@@ -374,7 +371,7 @@
         </main>
 
         <div class="pt-14">
-            <footer class="bg-amber-950 text-amber-200 p-4 text-left text-xs">
+            <footer class="bg-amber-950 text-amber-200 p-4 text-left mt-auto text-xs">
                 <p>&copy; 2013 CV. Surya Prima Mandiri</p>
                 <p><ion-icon name="call-outline"></ion-icon> 0812-9935-6751</p>
                 <a class="hover:underline " href="https://www.google.com/maps/uv?pb=!1s0x2e69fdd644db35b9%3A0x3ff6a95a9c55314e!3m1!7e115!4s%2Fmaps%2Fplace%2Fcv%2Bsurya%2Bprima%2Bmandiri%2F%40-6.2301226%2C106.5690648%2C3a%2C75y%2C237.62h%2C90t%2Fdata%3D*213m4*211e1*213m2*211ss6zTUafsXRy7PONRnqCFWw*212e0*214m2*213m1*211s0x2e69fdd644db35b9%3A0x3ff6a95a9c55314e%3Fsa%3DX%26ved%3D2ahUKEwjLvOqu9_WGAxWH-TgGHbdACkMQpx96BAg0EAA!5scv%20surya%20prima%20mandiri%20-%20Google%20Search!15sCgIgAQ&imagekey=!1e2!2ss6zTUafsXRy7PONRnqCFWw&cr=le_a7&hl=en&ved=1t%3A206134&ictx=111">
