@@ -84,9 +84,23 @@ function registrasi($data)
                 <li class="mx-4 my-6 md:my-0">
                     <a href="hitung.php" class="hover:opacity-50">Hitung</a>
                 </li>
-                <li class="mx-4 my-6 md:my-0">
-                    <a href="list.php" class="hover:opacity-50">Daftar Veneer</a>
-                </li>
+                <<?php
+                if ($isLogin) {
+                    // Admin is logged in
+                    echo '
+                            <li class="mx-4 my-6 md:my-0">
+                                <a href="admin.php" class="hover:opacity-50">Daftar Veneer</a>
+                            </li>
+                        ';
+                } else {
+                    // Admin is not logged in
+                    echo '
+                            <li class="mx-4 my-6 md:my-0">
+                                <a href="list.php" class="hover:opacity-50">Daftar Veneer</a>
+                            </li>
+                        ';
+                }
+                ?>
                 <li>
                     <a href="hasil.php" class="hover:opacity-50 hidden">Hasil Perhitungan</a>
                 </li>

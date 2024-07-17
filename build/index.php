@@ -35,9 +35,23 @@ $isLogin = (isset($_SESSION['login']) && $_SESSION['login'] === true);
                 <li class="mx-4 my-6 md:my-0">
                     <a href="hitung.php" class="hover:opacity-50">Hitung</a>
                 </li>
-                <li class="mx-4 my-6 md:my-0">
-                    <a href="list.php" class="hover:opacity-50">Daftar Veneer</a>
-                </li>
+                <?php
+                if ($isLogin) {
+                    // Admin is logged in
+                    echo '
+                            <li class="mx-4 my-6 md:my-0">
+                                <a href="admin.php" class="hover:opacity-50">Daftar Veneer</a>
+                            </li>
+                        ';
+                } else {
+                    // Admin is not logged in
+                    echo '
+                            <li class="mx-4 my-6 md:my-0">
+                                <a href="list.php" class="hover:opacity-50">Daftar Veneer</a>
+                            </li>
+                        ';
+                }
+                ?>
                 <li>
                     <a href="hasil.php" class="hover:opacity-50 hidden">Hasil Perhitungan</a>
                 </li>
@@ -86,7 +100,6 @@ $isLogin = (isset($_SESSION['login']) && $_SESSION['login'] === true);
             <img class="size-96 bg-amber-200 border-4 border-amber-950 rounded-full" src="./img/home.png" alt="Veneer">
         </section>
     </main>
-
 
     <footer class="bg-amber-950 text-amber-200 p-4 text-left mt-auto text-xs">
         <p>&copy; 2013 CV. Surya Prima Mandiri</p>

@@ -4,8 +4,6 @@
     include 'functions.php';
 
     $isLogin = (isset($_SESSION['login']) && $_SESSION['login'] === true);
-    $isAdmin = isset($_SESSION['login']);
-
 
     $veneer2 = query("SELECT * FROM veneer2");
 
@@ -218,7 +216,7 @@
                                 <th class="px-6 py-4 text-lg text-amber-950">C2 <br> Warna</th>
                                 <th class="px-6 py-4 text-lg text-amber-950">C3 <br> Pola</th>
                                 <th class="px-6 py-4 text-lg text-amber-950">C4 <br> Daya tahan</th>
-                                <?php if ($isAdmin) : ?>
+                                <?php if ($isLogin) : ?>
                                     <th class="px-6 py-4 text-lg text-amber-950 col-span-2" colspan="2">Aksi</th>
                                 <?php endif; ?>
                             </tr>
@@ -238,7 +236,7 @@
                                     <td class="px-6 py-4 text-lg font-medium text-center"><?= $row["warna"]; ?></td>
                                     <td class="px-6 py-4 text-lg font-medium text-center"><?= $row["pola"]; ?></td>
                                     <td class="px-6 py-4 text-lg font-medium text-center "><?= $row["dayaTahan"]; ?></td>
-                                    <?php if ($isAdmin) : ?>
+                                    <?php if ($isLogin) : ?>
                                         <td class="p-6 text-lg font-medium text-center border-l border-amber-950 inline-block sm:flex sm:justify-center">
                                             <a href="ubah.php?id=<?= $row["id"]; ?>" class="text-amber-950 hover:underline sm:inline">
                                                 <img src="img/icon/edit.svg" class="h-6 w-6 mx-auto sm:mx-0" alt="Edit Icon">
@@ -273,7 +271,7 @@
             </div>
 
             <!-- Modal Tambah Button -->
-            <?php if ($isAdmin) : ?>
+            <?php if ($isLogin) : ?>
                 <div class="flex items-center justify-center">
                     <button id="modal-toggle-tambah" class="transition bg-amber-200 hover:bg-amber-950 hover:text-amber-200 border-2 border-amber-950 text-amber-950 text-xl font-bold py-2 px-4 mt-3 rounded-full shadow-md items-center" type="button">
                         + Tambah

@@ -182,9 +182,23 @@ arsort($sortHighest);
                 <li class="mx-4 my-6 md:my-0">
                     <a>Hasil</a>
                 </li>
-                <li class="mx-4 my-6 md:my-0">
-                    <a href="list.php" class="hover:opacity-50">Daftar Veneer</a>
-                </li>
+                <?php
+                if ($isLogin) {
+                    // Admin is logged in
+                    echo '
+                            <li class="mx-4 my-6 md:my-0">
+                                <a href="admin.php" class="hover:opacity-50">Daftar Veneer</a>
+                            </li>
+                        ';
+                } else {
+                    // Admin is not logged in
+                    echo '
+                            <li class="mx-4 my-6 md:my-0">
+                                <a href="list.php" class="hover:opacity-50">Daftar Veneer</a>
+                            </li>
+                        ';
+                }
+                ?>
                 <li class="mx-4 my-6 md:my-0">
                     <a href="tentang.php" class="hover:opacity-50">Tentang</a>
                 </li>
