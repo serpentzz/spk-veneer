@@ -19,6 +19,16 @@ function cari($keyword)
     return query($query);
 }
 
+function getSkalaText($value, $criteria) {
+    $skalaText = [
+        'C1' => ['1' => 'Sangat murah', '2' => 'Murah', '3' => 'Cukup', '4' => 'Mahal', '5' => 'Sangat mahal'],
+        'C2' => ['1' => 'Sangat gelap', '2' => 'Gelap', '3' => 'Cukup', '4' => 'Terang', '5' => 'Sangat terang'],
+        'C3' => ['1' => 'Sangat lurus', '2' => 'Lurus', '3' => 'Cukup', '4' => 'Bergelombang', '5' => 'Sangat bergelombang'],
+        'C4' => ['1' => 'Sangat rendah', '2' => 'Rendah', '3' => 'Cukup', '4' => 'Tinggi', '5' => 'Sangat tinggi'],
+    ];
+
+    return $skalaText[$criteria][$value];
+}
 // tambah data
 // cek apakah tombol submit sudah ditekan atau belum
 if (isset($_POST["tambah"])) {
@@ -234,10 +244,10 @@ function tambah($data)
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 text-lg font-medium text-center"><?= $row["nama"]; ?></td>
-                                <td class="px-6 py-4 text-lg font-medium text-center"><?= $row["harga"]; ?></td>
-                                <td class="px-6 py-4 text-lg font-medium text-center"><?= $row["warna"]; ?></td>
-                                <td class="px-6 py-4 text-lg font-medium text-center"><?= $row["pola"]; ?></td>
-                                <td class="px-6 py-4 text-lg font-medium text-center "><?= $row["dayaTahan"]; ?></td>
+                                <td class="px-6 py-4 text-lg font-medium text-center text-amber-950"><?= getSkalaText($row["harga"], 'C1'); ?></td>
+                                <td class="px-6 py-4 text-lg font-medium text-center text-amber-950"><?= getSkalaText($row["warna"], 'C2'); ?></td>
+                                <td class="px-6 py-4 text-lg font-medium text-center text-amber-950"><?= getSkalaText($row["pola"], 'C3'); ?></td>
+                                <td class="px-6 py-4 text-lg font-medium text-center text-amber-950"><?= getSkalaText($row["dayaTahan"], 'C4'); ?></td>
                                 <?php if ($isLogin) : ?>
                                     <td class="p-6 text-lg font-medium text-center border-l border-amber-950 inline-block sm:flex sm:justify-center">
                                         <a href="ubah.php?id=<?= $row["id"]; ?>" class="text-amber-950 hover:underline sm:inline">
